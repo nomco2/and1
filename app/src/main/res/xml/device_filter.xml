@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- UVC -->
+    <usb-device class="239" subclass="2" vendor-id="6380" product-id="13209" protocol="1" />
+
+    <!-- Arduino -->
+    <usb-device class="2" subclass="0" vendor-id="10755" product-id="67" protocol="0" />
+    <usb-device class="2" subclass="0" vendor-id="9025" product-id="66" protocol="0" />
+    <usb-device class="2" subclass="0" vendor-id="1027" product-id="24577" protocol="0" />
+    <usb-device class="2" subclass="0" vendor-id="9025" product-id="1" protocol="0" />
+    <!-- 0x1a86 / 0x7523: Qinheng CH340 -->
+    <usb-device vendor-id="6790" product-id="29987" />
+    <usb-device vendor-id="9025" product-id="32822" />
+
+    <!-- Usb Hub -->
+    <usb-device class="9" subclass="0" vendor-id="7531" product-id="2" protocol="1" />
+    <usb-device class="9" subclass="0" vendor-id="6720" product-id="257" protocol="1" />
+
+</resources>

@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main">
+
+
+
+
+    <!-- _________camera_extend_btn floating _____________-->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/camera_extension_frame"
+        android:id="@+id/camera_extend_button_area">
+
+
+            <ImageButton
+                android:id="@+id/camera_scale_size_up_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/camera_scale_up_btn" />
+
+
+    </FrameLayout>
+
+
+    <!-- direction buttons -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/direction_arrow_frame">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:background="@drawable/direction_frame">
+
+
+            <!--방향 버튼 위_-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33">
+
+                <ImageButton
+                    android:id="@+id/left_up"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_up_left"
+                    android:layout_weight="0.3"/>
+
+                <ImageButton
+                    android:id="@+id/middle_up"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_up"
+                    android:layout_weight="0.3"/>
+
+                <ImageButton
+                    android:id="@+id/right_up"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_up_right"
+                    android:layout_weight="0.3"/>
+
+            </LinearLayout>
+
+
+            <!--방향 버튼 가운데_-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33">
+
+                <ImageButton
+                    android:id="@+id/left"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_left"
+                    android:layout_weight="0.3"/>
+
+                <ImageButton
+                    android:id="@+id/middle"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_middle_criteria"
+                    android:layout_weight="0.3"/>
+
+                <ImageButton
+                    android:id="@+id/right"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_right"
+                    android:layout_weight="0.3"/>
+
+
+            </LinearLayout>
+
+
+            <!--방향 버튼 아래_-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33">
+
+                <ImageButton
+                    android:id="@+id/left_down"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_down_left"
+                    android:layout_weight="0.3"/>
+
+                <ImageButton
+                    android:id="@+id/middle_down"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_down"
+                    android:layout_weight="0.3"/>
+
+                <ImageButton
+                    android:id="@+id/right_down"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/direction_arrow_down_right"
+                    android:layout_weight="0.3"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+<!--__________range data view ______________-->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_viewing_area">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.30"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <!-- CameraView_2_Spot_Check -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:padding="10dp"
+                android:background="@color/opacity_black"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_weight="0.33"
+                    android:text="기준 높이"/>
+
+                <TextView
+                    android:id="@+id/cameraview_1_spot_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_weight="0.33"
+                    android:layout_marginTop="10dp"
+                    android:text="현재 높이"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="0.33"
+                    android:layout_marginTop="10dp"
+                    android:text="높이 차이"/>
+
+            </LinearLayout>
+
+            <!-- CameraView_3_Distance_Check -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+
+                <!-- 거리 표시 -->
+                <TextView
+                    android:id="@+id/standard_height"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:background="@color/opacity_black"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/comparison_height"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.33"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:background="@color/opacity_black"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/height_difference"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.33"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:background="@color/opacity_black"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+
+
+
+
+
+    <!-- ______________________________________________floating layout end ________________________________________ -->
+
+    <!-- First_UVCCamera_View -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:screenOrientation="landscape"
+        android:orientation="horizontal">
+
+        <!-- CameraView (left in whole layout) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:background="@color/bg_dataview">
+
+            <!-- CameraView_1_uvcCamera_Camera_Aim -->
+            <RelativeLayout
+                android:id ="@+id/camera_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.65"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="5dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:id="@+id/default_camera_sec">
+
+                    <com.serenegiant.widget.UVCCameraTextureView
+                        android:id="@+id/UVCCameraTextureView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"/>
+
+                    <FrameLayout
+                        android:id="@+id/ext_camera_sec"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- addView(mUVCCameraView) -->
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/cameraview_1_aim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/cameraview_3_camera_aim"/>
+
+            </RelativeLayout>
+
+
+            <!--___________ option button line ___________-->
+
+            <!-- option button line1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.125"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/connect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="카" />
+
+                <Button
+                    android:id="@+id/serial_connect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="아" />
+
+
+
+
+
+                <Button
+                    android:id="@+id/direction_arrow_frame_scale_size_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="버튼크기" />
+
+                <Button
+                    android:id="@+id/data_viewing_area_scale_size_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="숫자크기" />
+
+                <Button
+                    android:id="@+id/correction_value_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="value" />
+
+            </LinearLayout>
+
+
+            <!-- option button line2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.125"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/move_original_button_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="버튼 안보일 때" />
+
+                <CheckBox
+                    android:id="@+id/move_button_hold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="버튼 위치 고정" />
+
+            </LinearLayout>
+
+            <!-- option button line3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"
+                android:paddingLeft="350dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:weightSum="1"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/setting_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/settings"/>
+
+            </LinearLayout>
+
+
+            <!-- logo line _-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/dataview_4_logo"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+        <!-- DataView (right in whole layout) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:background="@color/bg_dataview">
+
+            <!-- DataView_1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.35"
+                android:paddingTop="15dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="40dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+
+
+                <!-- DataView_1_Button_Area -->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25">
+
+                    <!-- 임시 버튼 자리 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/linearLayout">
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/dataview_1_img_spota"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="A" />
+
+
+                            <Button
+                                android:id="@+id/dataview_1_img_spotb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="B" />
+
+
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- 도움말 + 카메라 확대 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btn_help"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0.2"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:gravity="center"
+                            android:background="@color/opacity_white2"
+                            android:textColor="@android:color/white"
+                            android:textSize="50sp"
+                            android:text="@string/btn_help_msg"/>
+
+
+
+                        <TextView
+                            android:id="@+id/camera_expansion_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:background="@color/opacity_white2"
+                            android:text="카메라 확대"/>
+
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+
+
+
+                <!-- DataView_1_SpotA_Img -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.375"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dataview_1_img_spota_check"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/dataview_1_bg_title_noimage"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:text="지점A" />
+
+                    <!-- DataView_1_SpotA_Img -->
+
+
+                    <ImageView
+                        android:id="@+id/dataview_1_imgView_spota"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/dataview_1_noimage"/>
+
+
+                </LinearLayout>
+
+                <!-- DataView_1_SpotB_Img -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.375"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/dataview_1_bg_title_noimage"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:text="지점B"
+                        android:id="@+id/dataview_1_img_spotb_check" />
+
+
+                    <ImageView
+                        android:id="@+id/dataview_1_imgView_spotb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/dataview_1_noimage"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- DataView_2 (each data : spot a and b) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:paddingTop="10dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="40dp"
+                android:orientation="horizontal">
+
+                <!-- DataView_2_Each_Data_board -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:weightSum="1"
+                    android:gravity="center_vertical"
+                    android:background="@color/opacity_white"
+                    android:orientation="horizontal">
+
+                    <!-- DataView_2_Each_Data_Title -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.245"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:text="Distance"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:textSize="30sp"
+                                android:text="거리"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:text="Height"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:textSize="30sp"
+                                android:text="높이"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:textSize="10sp"
+                                android:text="Gradient"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:textSize="30sp"
+                                android:text="기울기"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- DataView_2_Each_Data_Border -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.005"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/igeoscan_color">
+
+                    </LinearLayout>
+
+
+                    <!-- DataView_2_Each_Data_SpotA -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.375"
+                        android:orientation="vertical">
+
+                        <!-- DataView_2_Each_Data_SpotA_Distance -->
+                        <TextView
+                            android:id="@+id/dataview_2_each_data_spota_distance"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+
+                        <!-- DataView_2_Each_Data_SpotA_Height -->
+                        <TextView
+                            android:id="@+id/dataview_2_each_data_spota_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
+
+                        <!-- DataView_2_Each_Data_SpotA_Gradient -->
+                        <TextView
+                            android:id="@+id/dataview_2_each_data_spota_gradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp" />
+
+                    </LinearLayout>
+
+                    <!-- DataView_2_Each_Data_SpotB -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.375"
+                        android:orientation="vertical">
+
+                        <!-- DataView_2_Each_Data_SpotB_Distance -->
+                        <TextView
+                            android:id="@+id/dataview_2_each_data_spotb_distance"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp" />
+
+                        <!-- DataView_2_Each_Data_SpotB_Height -->
+                        <TextView
+                            android:id="@+id/dataview_2_each_data_spotb_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp" />
+
+                        <!-- DataView_2_Each_Data_SpotB_Gradient -->
+                        <TextView
+                            android:id="@+id/dataview_2_each_data_spotb_gradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- DataView_3 (compare data : spot a and b) -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:paddingTop="10dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="40dp">
+
+                <!--- DataView_3_Compare_Data_Result_Ground_Img -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dataview_3_result_ground"/>
+
+                <!--- DataView_3_Compare_Data_Board -->
+                <LinearLayout
+                    android:layout_width="210dp"
+                    android:layout_height="165dp"
+                    android:padding="5dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/opacity_black"
+                    android:orientation="horizontal">
+
+                    <!--- DataView_3_Compare_Data_Title -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:text="거리 차"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:text="높이 차"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:text="기울기"/>
+
+                    </LinearLayout>
+
+                    <!--- DataView_3_Compare_Data -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!--- DataView_3_Compare_Data_Distance -->
+                        <TextView
+                            android:id="@+id/dataview_3_compare_data_distance"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />
+
+                        <!--- DataView_3_Compare_Data_Height -->
+                        <TextView
+                            android:id="@+id/dataview_3_compare_data_height"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />
+
+                        <!--- DataView_3_Compare_Data_Gradient -->
+                        <TextView
+                            android:id="@+id/dataview_3_compare_data_gradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!-- DataView_4 (igeoscan logo) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"
+                android:paddingTop="6dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/dataview_4_logo"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <!-- Expand_Camera_Info_Layout -->
+    <LinearLayout
+        android:id="@+id/expand_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.21"
+            android:background="@color/bg_dataview"
+            android:orientation="vertical">
+
+            <!-- Expand_Camera_Spot -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="0.3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/opacity_black"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05"
+                    android:background="@color/igeoscan_color"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.425"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+                        android:text="지"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+                        android:text="점"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/extend_point"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.57"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="120sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Expand_Distance -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.15"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:weightSum="1"
+                android:background="@color/opacity_black">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="0.4"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:text="거리"/>
+
+                <TextView
+                    android:id="@+id/extend_distance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="0.6"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <!-- Expand_Height -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.15"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:weightSum="1"
+                android:background="@color/opacity_black">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="0.4"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:text="높이"/>
+
+                <TextView
+                    android:id="@+id/extend_height"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="0.6"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Empty Area -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"/>
+
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/second_uvc_btn_back"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/transparent"
+                android:layout_weight="0.10"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/second_uvc_logo"
+                android:layout_weight="0.1"/>
+
+        </LinearLayout>
+
+
+        <!-- Expand_Camera_Layout -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:id = "@+id/cameraview_2"
+            android:layout_height="match_parent"
+            android:layout_weight="0.79"
+            android:background="@color/bg_dataview">
+
+
+
+            <ImageView
+                android:id="@+id/cameraview_2_aim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/cameraview_3_camera_aim"/>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

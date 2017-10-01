@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="opacity_black">#99000000</color>
+    <color name="opacity_white">#33ffffff</color>
+    <color name="opacity_white2">#19ffffff</color>
+    <color name="igeoscan_color">#c41c06</color>
+    <color name="bg_dataview">#393e47</color>
+
+</resources>
