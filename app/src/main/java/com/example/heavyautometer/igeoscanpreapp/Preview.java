@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -205,11 +206,23 @@ public class Preview extends Activity implements OnClickListener {
     boolean direction_arrow_frame_scale_up_down = true;
     boolean data_viewing_area_scale_up_down = true;
 
-    /******************** 보정 계수 관련 *****************/
+
+
+
+    /************* 나머지 설정 버튼 관련****************/
+
+    /* 보정 계수 관련 */
     private Button correction_value_btn;
     private int first_value;
     private float correction_value = 0.0f;
     private boolean is_starting_finding_correction_value = false;
+
+
+
+    private Button move_original_button_location; //버튼 위치 안보일 때
+    private CheckBox move_button_hold; //버튼 위치 고정
+
+    private ImageButton setting_button; //세팅 메뉴 보이기/안보이기
 
 
 
@@ -446,10 +459,16 @@ public class Preview extends Activity implements OnClickListener {
         data_viewing_area_scale_size_btn.setOnClickListener(this);
 
 
-        /**************보정 계수 관련 *****************/
+
+        /************** 나머지 설정 버튼 관련 *****************/
+
+        /* 보정 계수 관련 */
         correction_value_btn = (Button) findViewById(R.id.correction_value_btn);
         correction_value_btn.setOnClickListener(this);
 
+        move_original_button_location = (Button) findViewById(R.id.move_original_button_location);
+        move_button_hold = (CheckBox) findViewById(R.id.move_button_hold);
+        setting_button = (ImageButton) findViewById(R.id.setting_button);
 
 
 
