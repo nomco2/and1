@@ -143,7 +143,6 @@ public class Preview extends Activity implements OnClickListener {
     private RelativeLayout cameralayout;
     private FrameLayout defaultCameraSection;
     private FrameLayout extCameraSection;
-
     /* 확장 카메라 데이터뷰 */
     private TextView extend_point;
     private TextView extend_distance;
@@ -237,7 +236,7 @@ public class Preview extends Activity implements OnClickListener {
 
 
 /* 플로팅을 위한 베이스 레이아웃 */
-        mainLayout = (RelativeLayout) findViewById(R.id.main);
+        mainLayout = (FrameLayout) findViewById(R.id.main);
 
 
 
@@ -469,6 +468,21 @@ public class Preview extends Activity implements OnClickListener {
         move_original_button_location = (Button) findViewById(R.id.move_original_button_location);
         move_button_hold = (CheckBox) findViewById(R.id.move_button_hold);
         setting_button = (ImageButton) findViewById(R.id.setting_button);
+        move_original_button_location.setOnClickListener(this);
+        move_button_hold.setOnClickListener(this);
+        setting_button.setOnClickListener(this);
+
+        /*설정 버튼 제일 앞으로*/
+        connect.setVisibility(View.INVISIBLE);
+        serial_connect.setVisibility(View.INVISIBLE);
+        direction_arrow_frame_scale_size_btn.setVisibility(View.INVISIBLE);
+        data_viewing_area_scale_size_btn.setVisibility(View.INVISIBLE);
+        correction_value_btn.setVisibility(View.INVISIBLE);
+        move_original_button_location.setVisibility(View.INVISIBLE);
+        move_button_hold.setVisibility(View.INVISIBLE);
+
+
+
 
 
 
@@ -1052,6 +1066,13 @@ public class Preview extends Activity implements OnClickListener {
 
             }
 
+            //세팅 버튼들 숨겼다 보이기
+            if(v.getId() == R.id.setting_button){
+                setting_buttons_group_visible();
+            }
+
+
+
 
 
         }//onclicklistener 끝
@@ -1148,7 +1169,38 @@ public class Preview extends Activity implements OnClickListener {
 
             return false;
         }
-    };
+    };//ontouchlistener 끝
+
+    private void setting_buttons_group_visible(){
+        if(serial_connect.getVisibility() == View.VISIBLE) {
+            connect.setVisibility(View.INVISIBLE);
+            serial_connect.setVisibility(View.INVISIBLE);
+            direction_arrow_frame_scale_size_btn.setVisibility(View.INVISIBLE);
+            data_viewing_area_scale_size_btn.setVisibility(View.INVISIBLE);
+            correction_value_btn.setVisibility(View.INVISIBLE);
+            move_original_button_location.setVisibility(View.INVISIBLE);
+            move_button_hold.setVisibility(View.INVISIBLE);
+        }else if(serial_connect.getVisibility() == View.INVISIBLE){
+            connect.setVisibility(View.VISIBLE);
+            serial_connect.setVisibility(View.VISIBLE);
+            direction_arrow_frame_scale_size_btn.setVisibility(View.VISIBLE);
+            data_viewing_area_scale_size_btn.setVisibility(View.VISIBLE);
+            correction_value_btn.setVisibility(View.VISIBLE);
+            move_original_button_location.setVisibility(View.VISIBLE);
+            move_button_hold.setVisibility(View.VISIBLE);
+        }
+
+
+        connect.bringToFront();
+        serial_connect.bringToFront();
+        direction_arrow_frame_scale_size_btn.bringToFront();
+        data_viewing_area_scale_size_btn.bringToFront();
+        correction_value_btn.bringToFront();
+        move_original_button_location.bringToFront();
+        move_button_hold.bringToFront();
+
+
+    }
 
 
 

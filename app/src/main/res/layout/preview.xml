@@ -404,12 +404,6 @@
                     android:layout_gravity="bottom|right"
                     android:text="버튼 안보일 때" />
 
-                <CheckBox
-                    android:id="@+id/move_button_hold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:text="버튼 위치 고정" />
 
             </LinearLayout>
 
@@ -418,7 +412,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.05"
-                android:paddingLeft="350dp"
+                android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="5dp"
                 android:weightSum="1"
@@ -427,9 +421,16 @@
 
                 <ImageButton
                     android:id="@+id/setting_button"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/settings"/>
+
+                <CheckBox
+                    android:id="@+id/move_button_hold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:text="버튼 위치 고정" />
 
             </LinearLayout>
 
@@ -458,6 +459,10 @@
 
 
 
+
+
+
+<!-- 안쓰는 부분 -->
 
 
         <!-- DataView (right in whole layout) -->

@@ -135,7 +135,7 @@ public class Movable_Layout_Class {
                 switch (event.getAction() & MotionEvent.ACTION_MASK) {
 
                     case MotionEvent.ACTION_DOWN:
-                        RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams)
+                        FrameLayout.LayoutParams lParams = (FrameLayout.LayoutParams)
                                 view.getLayoutParams();
 
                         xDelta = x - lParams.leftMargin;
@@ -161,7 +161,7 @@ public class Movable_Layout_Class {
                         break;
 
                     case MotionEvent.ACTION_MOVE:
-                        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) view
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view
                                 .getLayoutParams();
                         layoutParams.leftMargin = x - xDelta;
                         layoutParams.topMargin = y - yDelta;
