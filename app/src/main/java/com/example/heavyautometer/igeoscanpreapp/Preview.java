@@ -224,6 +224,13 @@ public class Preview extends Activity implements OnClickListener {
     private ImageButton setting_button; //세팅 메뉴 보이기/안보이기
 
 
+    //movable class 홀드 됬는지 이전 설정값 저장
+    SharedPreferences location_hold_boolean;
+    SharedPreferences.Editor location_hold_boolean_editor;
+
+
+
+
 
 
 
@@ -236,7 +243,7 @@ public class Preview extends Activity implements OnClickListener {
 
 
 /* 플로팅을 위한 베이스 레이아웃 */
-        mainLayout = (FrameLayout) findViewById(R.id.main);
+        mainLayout = (RelativeLayout) findViewById(R.id.main);
 
 
 
@@ -287,6 +294,7 @@ public class Preview extends Activity implements OnClickListener {
         camera_extend_button_moving = new Movable_Layout_Class(this, mainLayout, camera_extend_button_area, cemera_extend_button_location);
         camera_scale_size_up_btn = (ImageButton)findViewById(R.id.camera_scale_size_up_btn);
         camera_scale_size_up_btn.setOnClickListener(this);
+
 
 
 
@@ -481,6 +489,11 @@ public class Preview extends Activity implements OnClickListener {
         move_original_button_location.setVisibility(View.INVISIBLE);
         move_button_hold.setVisibility(View.INVISIBLE);
 
+        //movable class 홀드 버튼 이전 설정 불러오기
+        location_hold_boolean = PreferenceManager.getDefaultSharedPreferences(this);
+        location_hold_boolean_editor = location_hold_boolean.edit();
+        move_button_hold.setChecked(location_hold_boolean.getBoolean("is_movable_hold",false));
+        is_movable_hold_mathod();
 
 
 
@@ -1071,6 +1084,19 @@ public class Preview extends Activity implements OnClickListener {
                 setting_buttons_group_visible();
             }
 
+            //movable class 위치 고정 시키기
+            if(v.getId() == R.id.move_button_hold){
+                is_movable_hold_mathod();
+                //홀드 인지 설정값 저장
+                boolean a;
+                if(move_button_hold.isChecked()){
+                    a = true;
+                }else{
+                    a = false;
+                }
+                location_hold_boolean_editor.putBoolean("is_movable_hold",a);
+            }
+
 
 
 
@@ -1200,6 +1226,18 @@ public class Preview extends Activity implements OnClickListener {
         move_button_hold.bringToFront();
 
 
+    }
+
+    private void is_movable_hold_mathod(){
+        if(move_button_hold.isChecked()){
+            data_viewing_area_moving.is_movable_hold = false;
+            camera_extend_button_moving.is_movable_hold = false;
+            direction_arrow_frame_moving.is_movable_hold = false;
+        }else if(!move_button_hold.isChecked()){
+            data_viewing_area_moving.is_movable_hold = true;
+            camera_extend_button_moving.is_movable_hold = true;
+            direction_arrow_frame_moving.is_movable_hold = true;
+        }
     }
 
 

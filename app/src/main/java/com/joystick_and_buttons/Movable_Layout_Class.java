@@ -24,6 +24,7 @@ public class Movable_Layout_Class {
     private ViewGroup mainLayout;
     private ViewGroup mframe;
     private String[] mloaction_xy;
+    public boolean is_movable_hold = true;
 
     Context mainactivity_context;
     SharedPreferences location_savaer;
@@ -132,43 +133,43 @@ public class Movable_Layout_Class {
                 final int y = (int) event.getRawY();
 
 
-                switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                if(is_movable_hold) { //위치 고정
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
 
-                    case MotionEvent.ACTION_DOWN:
-                        FrameLayout.LayoutParams lParams = (FrameLayout.LayoutParams)
-                                view.getLayoutParams();
+                        case MotionEvent.ACTION_DOWN:
+                            RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams)
+                                    view.getLayoutParams();
 
-                        xDelta = x - lParams.leftMargin;
-                        yDelta = y - lParams.topMargin;
-                        break;
+                            xDelta = x - lParams.leftMargin;
+                            yDelta = y - lParams.topMargin;
+                            break;
 
-                    case MotionEvent.ACTION_UP:
+                        case MotionEvent.ACTION_UP:
 //                        Toast.makeText(mainactivity_context,"thanks for new location!", Toast.LENGTH_SHORT).show();
 
 
-
-
 //saving _xy location
-                        location_savaer = PreferenceManager.getDefaultSharedPreferences(mainactivity_context);
-                        location_xy_editor = location_savaer.edit();
+                            location_savaer = PreferenceManager.getDefaultSharedPreferences(mainactivity_context);
+                            location_xy_editor = location_savaer.edit();
 
 
-                        location_xy_editor.putFloat(mloaction_xy[0],mframe.getX());
-                        location_xy_editor.putFloat(mloaction_xy[1],mframe.getY());
-                        location_xy_editor.commit();
+                            location_xy_editor.putFloat(mloaction_xy[0], mframe.getX());
+                            location_xy_editor.putFloat(mloaction_xy[1], mframe.getY());
+                            location_xy_editor.commit();
 
 
-                        break;
+                            break;
 
-                    case MotionEvent.ACTION_MOVE:
-                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view
-                                .getLayoutParams();
-                        layoutParams.leftMargin = x - xDelta;
-                        layoutParams.topMargin = y - yDelta;
-                        layoutParams.rightMargin = 0;
-                        layoutParams.bottomMargin = 0;
-                        view.setLayoutParams(layoutParams);
-                        break;
+                        case MotionEvent.ACTION_MOVE:
+                            RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) view
+                                    .getLayoutParams();
+                            layoutParams.leftMargin = x - xDelta;
+                            layoutParams.topMargin = y - yDelta;
+                            layoutParams.rightMargin = 0;
+                            layoutParams.bottomMargin = 0;
+                            view.setLayoutParams(layoutParams);
+                            break;
+                    }
                 }
                 mainLayout.invalidate();
                 return true;

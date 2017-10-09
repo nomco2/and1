@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/camera_extension_frame"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
         android:id="@+id/camera_extend_button_area">
 
 
@@ -164,7 +166,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
-                android:padding="10dp"
                 android:background="@color/opacity_black"
                 android:orientation="vertical">
 
@@ -334,7 +335,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.125"
+                android:layout_weight="0.15"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
@@ -389,41 +390,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.125"
+                android:layout_weight="0.15"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="5dp"
                 android:weightSum="1"
+                android:layout_gravity="right"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/move_original_button_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
                     android:text="버튼 안보일 때" />
-
-
-            </LinearLayout>
-
-            <!-- option button line3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.05"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="5dp"
-                android:weightSum="1"
-                android:layout_gravity="right"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/setting_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/settings"/>
 
                 <CheckBox
                     android:id="@+id/move_button_hold"
@@ -432,7 +412,11 @@
                     android:layout_gravity="bottom|right"
                     android:text="버튼 위치 고정" />
 
+
+
             </LinearLayout>
+
+
 
 
             <!-- logo line _-->
@@ -445,11 +429,20 @@
                 android:paddingTop="6dp"
                 android:orientation="horizontal">
 
+
+                <ImageButton
+                    android:id="@+id/setting_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/settings"/>
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:src="@drawable/dataview_4_logo"/>
+
+
 
             </LinearLayout>
 
@@ -1178,4 +1171,4 @@
     </LinearLayout>
 
 
-</FrameLayout>
+</RelativeLayout>

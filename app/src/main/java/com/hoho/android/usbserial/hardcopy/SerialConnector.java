@@ -189,6 +189,27 @@ public class SerialConnector {
 	}
 
 
+	/**
+	 *
+	 * @param value : String amending_angle_value
+	 */
+	public void amend_angle_value(String value){
+
+		if(mPort != null && value != null) {
+			try {
+				String A = "A"; //arduino will understand that amending anlge value
+				mPort.write(A.getBytes(), A.length());
+				mPort.write(value.getBytes(), value.length());		// Send to remote device
+//				mPort.write(test_command, test_command.length);
+			}
+			catch(IOException e) {
+				mListener.onReceive(Constants.MSG_SERIAL_ERROR, 0, 0, "Failed in sending command. : IO Exception \n", null);
+			}
+		}
+
+	}
+
+
 
 	/*********
 	 *
